@@ -1,7 +1,9 @@
 import random
 
 def start_game():
-    print("\n--- Codespace Number Guesser ---")
+
+    print("\n--- Number Guesser ---")
+
     secret_number = random.randint(1, 100)
     attempts = 0
 
@@ -10,7 +12,6 @@ def start_game():
 
     while True:
         try:
-            # Taking input from the user
             guess = int(input("Your guess: "))
             attempts += 1
 
@@ -20,7 +21,6 @@ def start_game():
                 print(" -> Too high! Try again.")
             else:
                 print(f"\nSUCCESS! You found the number {secret_number} in {attempts} tries.")
-                print("Your Codespace is working perfectly.")
                 break
         except ValueError:
             print(" -> Please enter a valid integer.")
