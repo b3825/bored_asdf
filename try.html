@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Preview Test Page</title>
+    <style>
+        /* --- CSS Styles (How it looks) --- */
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            color: #0078d7; /* VS Code Blue */
+            margin-bottom: 10px;
+        }
+        p.instructions {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+        button {
+            background-color: #28a745; /* Green */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        #result-area {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+            min-height: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Bryce E Fox</h1>
+        <p class="instructions">
+            If you can see this page, it worked.
+            <br><br>
+            Student @ WSU CECS | Mech Eng Major | CS Minor
+            <br>
+            (CS IS MORE FUN LOL)
+        </p>
+        <button id="testButton">Click Me</button>
+        <p id="result-area">Waiting for input...</p>
+    </div>
+
+
+    <script>
+        const button = document.getElementById('testButton');
+        const resultArea = document.getElementById('result-area');
+        let clickCount = 0;
+
+        // When the button is clicked, run this function
+        button.addEventListener('click', () => {
+            clickCount++;
+            resultArea.textContent = `JavaScript is running! Button clicked ${clickCount} times.`;
+            resultArea.style.color = clickCount % 2 === 0 ? 'blue' : 'red';
+        });
+    </script>
+
+</body>
+</html>
